@@ -1,0 +1,32 @@
+{{#visible}}
+	<div class="shows" intro="fly">
+		<h2>Tv shows</h2>
+		<div class="row">
+			{{#movies}}
+			<div class="col-sm-6 col-md-3">
+				<div class="thumbnail">
+					<img data-src="holder.js/300x200/auto" alt="{{title}}">
+					<div class="caption">
+						<h3>{{title}}</h3>
+						<p>
+							{{description}}
+						</p>
+						{{#following}}
+						<button on-tap="toggle:{{id}}" class="btn btn-danger btn-block">
+							<i class="glyphicon glyphicon-ok"></i>
+							Fjern
+						</button>
+						{{/following}}
+						{{^following}}
+						<button on-tap="toggle:{{id}}" class="btn btn-success btn-block">
+							<i class="glyphicon glyphicon-plus"></i>
+							Legg til
+						</button>
+						{{/following}}
+					</div>
+				</div>
+			</div>
+			{{/movies}}
+		</div>
+	</div>
+{{/visible}}
