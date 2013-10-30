@@ -36,6 +36,8 @@ class Streamer:
 
 	def getFilename(self, path):
 		return os.path.basename(path)
+
+
 	def getRarFile(self, filename):
 		base = os.path.splitext(filename)
 
@@ -75,7 +77,7 @@ class Streamer:
 
 def getRange(self):
 	request_range = os.environ('HTTP_RANGE')
-	request_range = request_range.split('-')
+	request_range = request_range[6:].split('-')
 
 	if (request_range[0] < 0):
 		request_range[0] = 0
@@ -84,7 +86,6 @@ def getRange(self):
 		request_range[1] = -1
 
 	return request_range
-	
 
 
 if __name__ == '__main__':
